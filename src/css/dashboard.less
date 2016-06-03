@@ -1,0 +1,78 @@
+
+.dashboard {
+  margin-top:20px;
+
+  .news.list-group {
+    .list-group-item {
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        border-radius: 100%;
+
+        i {
+          width: 40px;
+          height: 40px;
+          display: block;
+          text-align: center;
+          line-height: 40px;
+          font-size: 25px;
+          color: #fff;
+        }
+      }
+
+      .notification-info {
+        margin-left: 56px;
+        margin-top: -40px;
+
+        ul.notification-meta {
+          margin-bottom: 3px;
+          padding-left: 0;
+          list-style: none;
+
+          .notification-time {
+            font-style: italic;
+            color: #999;
+          }
+
+          .notification-sender {
+            color: #414147;
+          }
+        }
+
+        p {
+          margin: 0;
+          color: #999;
+          font-size: 12px;
+        }
+      }
+
+
+      &:last-child {
+        margin-bottom: 0
+      }
+
+      border: none;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+
+    .success {
+      background: #dff0d8;
+
+      .icon {
+        background: #98d7ad;
+      }
+    }
+
+    .danger {
+      background: #f2dede;
+    }
+
+    .warning {
+      background: #fcf8e3;
+    }
+  }
+}
