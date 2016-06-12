@@ -30,12 +30,11 @@ export function loginSuccess() {
     dispatch({
       type: LOGIN_SUCCESS
     })
-    dispatch(routeActions.push('/dashboard'))
+    dispatch(routeActions.push('/me'))
   }
 }
 
 export function userUpdated(user) {
-  window.analytics.identify(user.id, user)
   return {
     type: USER_UPDATED,
     user
@@ -66,7 +65,7 @@ function signupSuccess() {
     dispatch({
       type: SIGNUP_SUCCESS
     })
-    dispatch(routeActions.push('/dashboard'))
+    dispatch(routeActions.push('/me'))
   }
 }
 export function signup(data) {
@@ -89,6 +88,11 @@ export function signup(data) {
               currency: 'USD'
             }
             firebaseRef.child('users').child(data.uid).set(userObject)
+            let ref = firebaseRef.child('apikeys').child(data.uid)
+            ref.set({
+              mailgunApiKey: '',
+              closeioApiKey: ''
+            })
             dispatch(signupSuccess())
           }
         })
